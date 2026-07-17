@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    text-align: center;
+    background-image: url(images/table.jpg);
+    background-size: cover;
+    color: #daeef7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn{
+    font-size: large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #26575a;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 4px 5px 4px;
+    font-weight: bold;
+    color: aliceblue;
+    box-shadow: 0px 0px 3px 1px black;
+    margin: 10px 10px 10px 10px;
+}
+.message{
+    font-size: medium;
+    color: #aaecaf;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+#compHands{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    transform: scale(-1,-1);
+    font-size: larger;
+}
+#compLeft{
+    transform: scaleX(-1);
+}
+#playerHands{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    font-size: larger;
+}
+#playerLeft{
+    transform: scaleX(-1);
+}
+#checkboxes{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
