@@ -55,3 +55,12 @@ body{
     justify-content: center;
     gap: 0.5em;
 }
+.header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#roundDisplay{
+    position: absolute;
+    left: 10px;
+}

@@ -2,6 +2,7 @@
 let attackingHand = document.getElementById("attackingHand")
 let usingHand = document.getElementById("usingHand")
 let text = document.getElementById("log")
+let roundDisplay = document.getElementById("roundDisplay")
 
 //Creating integers to evaluate attacks
 let attacking = 0
@@ -285,7 +286,7 @@ function compTurn(){
             let temp = "Computer: " + emoji[computer.rhs] + " = "
             computer.rhs -= 1
             computer.lhs += 1
-            temp = emoji[computer.rhs] + " + " + emoji[computer.lhs]
+            temp += emoji[computer.rhs] + " + " + emoji[computer.lhs]
             messageLog(temp)
         }
     else if(computer.rhs === 0 && computer.lhs !== 6 && 
@@ -296,7 +297,7 @@ function compTurn(){
             let temp = "Computer: " + emoji[computer.lhs] + " = "
             computer.lhs -= 1
             computer.rhs += 1
-            temp = emoji[computer.lhs] + " + " + emoji[computer.rhs]
+            temp += emoji[computer.lhs] + " + " + emoji[computer.rhs]
             messageLog(temp)
         }
     //Priority 4: Attack any hand at random
@@ -309,10 +310,20 @@ function compTurn(){
 //Declare function to end the round
 function endRound(){
     roundNo++
+    roundDisplay.innerText = "Round: "+roundNo
     player.Left.innerText = emoji[player.lhs]
     player.Right.innerText = emoji[player.rhs]
     computer.Left.innerText = emoji[computer.lhs]
     computer.Right.innerText = emoji[computer.rhs]
+
+    //Check if any one has lost
+    if(computer.lhs === 0 && computer.rhs === 0){
+        window.location.href = "endgame.html"
+
+    }
+    else if(player.lhs === 0 && player.rhs === 0){
+        window.location.href = "lose.html"
+    }
     messageLog("___round end___")
 }
 
@@ -351,4 +362,14 @@ function randomChoice(){
     else if(handA === 2 && handB === 2){
         player.rhs = evaluateAttack(false, computer.rhs, player.rhs)
     }
+}
+
+//Declare function to play again
+function playAgain(){
+    window.location.href = "game.html"
+}
+
+//Declare function to go back home
+function backHome(){
+    window.location.href = "index.html"
 }
